@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Texto con Fondo Negro</title>
+	<style type="text/css">body {
+            background-color: green;
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .title-line {
+            border-bottom: 2px solid white;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding-top: 20px;
+        }
+
+        p {
+            margin: 0 0 20px 0;
+        }
+	</style>
+</head>
+<body>
+<h5>Busque los tres puntitos arriba y a la derecha.<br />
+&quot;Abrir con:&quot; Opci&oacute;n &quot;Chrome&quot;<br />
+Presiona Bot&oacute;n y Espera .</h5>
+<button onclick="leerEnVozAlta()">Leer en Voz Alta</button>
+
+<div class="title-line">
+<h2>DOCTRINA O ENSE&Ntilde;ANZA &#39;BIBLICA Y &#39;AFIRMACIÓN CONCEPTUAL</h2>
+
+<p>&iquest;Sabes la diferencia entre una DOCTRINA B&Iacute;BLICA Y UNA &#39;AFIRMACIÓN CONCEPTUAL (CONCEPTO)?.</p>
+
+<p>A) Doctrinas b&iacute;blicas: Ense&ntilde;anzas mencionadas textualmente en la Biblia..</p>
+
+<p>B) Afirmaciones conceptuales (Concepto): Deducciones (algunas a partir de doctrinas b&iacute;blicas ),no est&aacute;n expl&iacute;citamente mencionados en el texto b&iacute;blico..</p>
+
+<h3><em>Usando tu biblia &iquest;puedes definir cu&aacute;l de los items corresponden a las siguientes frases?&quot; </em></h3>
+
+<p><em><em>";Nacer de nuevo" (o ser nacido de nuevo) : Ayuda : <span style="color: #ff6600;">Juan 3:7_ DOCTRINA </span></em></em></p>
+
+<p><em><em>&quot;Bautismo , bautizaba , bautizado&quot; &iquest;DOCTRINA o CONCEPTO?</em></em></p>
+
+<p>&nbsp;</p>
+
+<p><em><em>&quot;Resurrecci&oacute;n, resucitar, resucit&oacute; , resucitar&aacute;n&quot; &iquest;DOCTRINA o CONCEPTO? </em></em></p>
+
+<p><em><em>&quot;Divinidad&quot; &iquest;DOCTRINA o CONCEPTO?</em></em></p>
+
+<p>&nbsp;</p>
+
+<p><em><em>&quot;Trinidad&quot; &iquest;DOCTRINA o CONCEPTO? </em></em></p>
+
+<p><em><em>&quot;Muerto en delitos y pecados&quot; . Ayuda : <span style="color: #ff6600;">Efesios 2:1_ DOCTRINA </span></em></em></p>
+
+<p><em><em>&quot;Muerto espiritualmente&quot; &iquest;DOCTRINA o CONCEPTO?</em></em></p>
+
+<p>&nbsp;</p>
+
+<p><em><em>&quot;Muerte quiere decir separaci&oacute;n&quot; &iquest;DOCTRINA o CONCEPTO?</em></em></p>
+
+<p>&nbsp;</p>
+
+<p><em><em>&quot;Libre Albedr&iacute;o&quot; &iquest;DOCTRINA o CONCEPTO?</em></em></p>
+
+<p>&nbsp;</p>
+
+<p><em><em>&quot;Elecci&oacute;n&quot; ..... (tanto de Dios como vuestra) Ayuda : <span style="color: #ff6600;">Rom_9:11 _1Ts_1:4 DOCTRINA </span></em></em></p>
+
+<h3><em><em><em>Algunas afirmaciones no llegan a ser conceptos , son solo suposiciones o tradiciones que no tienen justificaci&oacute;n lingüística ni hist&oacute;rica&quot; </em></em></em></h3>
+
+<p><em><em><em><em>EJEMPLO que:&quot;Cristiano significa peque&ntilde;o Cristo&quot; , Cristiano viene de &chi;&rho;&iota;&sigma;&tau;&iota;&alpha;&nu;&omicron;&upsilon;&sigmaf; (jristian&oacute;s) y se entiende como seguidor de Cristo</em></em></em></em></p>
+
+<p>&nbsp;</p>
+</div>
+<script>
+     function leerEnVozAlta() {
+    // Obtener el texto del elemento con la clase "contenido-texto"
+    var texto = document.querySelector('.title-line').innerText;
+
+    // Dividir el texto en segmentos más pequeños
+    var partes = dividirTextoEnPartes(texto, 500); // Por ejemplo, 200 caracteres por parte
+
+    // Leer cada parte secuencialmente
+    partes.forEach((parte) => {
+        var mensaje = new SpeechSynthesisUtterance(parte);
+        mensaje.lang = 'es-ES';
+        mensaje.pitch =.7;
+        mensaje.rate = 1;
+        window.speechSynthesis.speak(mensaje);
+    });
+}
+
+function dividirTextoEnPartes(texto, tamano) {
+    var partes = [];
+    for (var i = 0; i < texto.length; i += tamano) {
+        partes.push(texto.slice(i, i + tamano));
+    }
+    return partes;
+}
+
+    </script></body>
+</html>
